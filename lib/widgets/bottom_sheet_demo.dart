@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gan_flutter_demo/widgets/my_draggable_sheet.dart';
 
 class BottomSheetDemo extends StatefulWidget {
   const BottomSheetDemo({super.key});
@@ -73,25 +74,24 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
                         );
                       });
                 },
-                child: const Text('Switch 2')),
+                child: const Text('Switch in StatefulBuilder and Method')),
             TextButton(
                 onPressed: () {
                   showModalBottomSheet(
                       context: context,
                       builder: (context) {
-                        return buildSwitch4();
+                        print('builder');
+                        _switchValue = false;
+                        return buildStatefulBuilder();
                       });
                 },
-                child: const Text('Switch 3')),
+                child: const Text(
+                    'Switch and StatefulBuilder in the Same Method ')),
             TextButton(
                 onPressed: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return buildSwitch4();
-                      });
+                  print(_switchValue);
                 },
-                child: const Text('Switch 4')),
+                child: const Text('Print _switchValue (不要在 showModalBottomSheet 的 builder 中初始化，因为在下滑关闭或没有关闭的时候，会调用 2 次 builder)')),
             TextButton(
                 onPressed: () {
                   showModalBottomSheet(
@@ -124,39 +124,24 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
                           }));
                 },
                 child: const Text('Scroll Bottom Sheet')),
+            // MyDraggableSheet()
           ],
         ),
       ),
     );
   }
 
-  StatefulBuilder buildSwitch4() {
+  StatefulBuilder buildStatefulBuilder() {
     return StatefulBuilder(
       builder: (context, setState) {
         return Container(
           height: 300,
-          child: ListView(
-            children: [
-              Switch(
-                value: _switchValue,
-                onChanged: (bool newValue) {
-                  // 仅能更新该 Switch
-                  setState(() {
-                    _switchValue = newValue;
-                  });
-                  // 仅能更新该 showModalBottomSheet 所属的 Widget。
-                  this.setState(() {
-                    _switchValue = newValue;
-                  });
-                },
-              ),
-              Checkbox(
+          child: Center(
+            child: Column(
+              children: [
+                Switch(
                   value: _switchValue,
-                  activeColor: Colors.green,
-                  onChanged: (newValue) {
-                    if (newValue == null) {
-                      return;
-                    }
+                  onChanged: (bool newValue) {
                     // 仅能更新该 Switch
                     setState(() {
                       _switchValue = newValue;
@@ -165,12 +150,34 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
                     this.setState(() {
                       _switchValue = newValue;
                     });
-                  }),
-            ],
+                  },
+                ),
+                buildCheckbox(setState),
+              ],
+            ),
           ),
         );
       },
     );
+  }
+
+  Checkbox buildCheckbox(StateSetter setState) {
+    return Checkbox(
+        value: _switchValue,
+        activeColor: Colors.green,
+        onChanged: (newValue) {
+          if (newValue == null) {
+            return;
+          }
+          // 仅能更新该 Switch
+          setState(() {
+            _switchValue = newValue;
+          });
+          // 仅能更新该 showModalBottomSheet 所属的 Widget。
+          this.setState(() {
+            _switchValue = newValue;
+          });
+        });
   }
 
   Widget switch2() {

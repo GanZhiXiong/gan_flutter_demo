@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gan_flutter_demo/widgets/bottom_sheet_demo.dart';
+import 'package:gan_flutter_demo/widgets/long_text_demo.dart';
+import 'package:gan_flutter_demo/widgets/parameter_passing_demo.dart';
+import 'package:gan_flutter_demo/widgets/picker_demo.dart';
+import 'package:gan_flutter_demo/widgets/scrollable_sheet_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,11 +34,15 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        // useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const WaterTankPage(),
-      home: const BottomSheetDemo(),
+      // home: const BottomSheetDemo(),
+      // home: ScrollableSheetPage(),
+      home: LongTextDemo(),
+      // home: const PickerDemo(),
+      // home: WidgetC(),
     );
   }
 }
