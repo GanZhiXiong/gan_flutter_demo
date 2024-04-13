@@ -14,8 +14,10 @@ class Person {
   factory Person.clone(Person source) {
     return Person(source.name, source.age);
   }
-  
-  Person.guest() : this.name = 'guest', this.age = 0;
+
+  Person.guest()
+      : this.name = 'guest',
+        this.age = 0;
 
   @override
   String toString() {
@@ -30,6 +32,31 @@ class Person {
 }
 
 void main() {
+  test('addAll', () {
+    Map w = {'4': 3};
+    print(jsonEncode(w));
+
+    Map a = {'a': 1, 'b': 2};
+    print(a);
+    var b = {'a': 2, 'b': 2};
+    a.addAll(b);
+    print(a);
+    Map c = {
+      'a': {'a1': 11}
+    };
+
+    a.addAll(c);
+    print(a);
+    a['a'].addAll({'a1': 22});
+    print(a);
+
+    a['a'].addAll({'a1': 22});
+    print(a);
+
+    a['a'].addAll(1);
+    print(a);
+  });
+
   test("List 复制不可变元素", () {
     var myList = [1, 2, 3];
     print('my $myList');
@@ -63,7 +90,11 @@ void main() {
   }
 
   test('List 复制可变元素', () {
-    var myList = [[1], [2], [3]];
+    var myList = [
+      [1],
+      [2],
+      [3]
+    ];
     var yourList = myList.toList();
     yourList.removeAt(0);
     print('my $myList');
@@ -88,12 +119,16 @@ void main() {
     print('your $yourList');
 
     print('方法二：map');
-    myList = [[1], [2], [3]];
+    myList = [
+      [1],
+      [2],
+      [3]
+    ];
     yourList = deepCopy(myList);
     yourList.first.first = 11;
     print('my $myList');
     print('your $yourList');
-    
+
     print('方法三：自定义 clone 方法');
     var myPersonList = [
       Person('a', 19),
@@ -116,20 +151,49 @@ void main() {
     hePersonList.first.age = 22;
     print('my $myPersonList');
     print('he $hePersonList');
-
   });
 
   test('map copy', () {
-    var myMap =
-        {'a': 1, 'b': 2, 'c': 3}; // 创建一个 Map 对象
+    var myMap = {
+      'a': 1,
+      'b': {'bb': 2},
+      'c': 3
+    }; // 创建一个 Map 对象
+    // var yourMap = myMap.map((key, value) => MapEntry(key, value));
+    var yourMap = {...myMap};
+    yourMap.remove('a');
+    print('my $myMap');
+    print('your $yourMap');
 
+    yourMap['b'] = 22;
+    print('my $myMap');
+    print('your $yourMap');
+
+    Map? a;
+    var b = {...?a};
+    print(b);
   });
 
+  // https://stackoverflow.com/questions/50320220/in-dart-whats-the-difference-between-list-from-and-of-and-between-map-from-a
   test('from of test', () {
     // type 'int' is not a subtype of type 'String'
     // List<String> foo = new List.from(<int>[1, 2, 3]); // okay until runtime.
     // The argument type 'List<int>' can't be assigned to the parameter type 'Iterable<String>'. (Documentation)
     // List<String> bar = new List.of(<int>[1, 2, 3]); // analysis error
+
+    var ints =
+        List<int>.from(<num>[0, 1]); // Good as all elements are of type `int`
+    // var ints1 = List<int>.from(<num>[0, 1.5]); // Bad as some elements are of type `double`
+
+    // var ints2 = List<num>.of(<int>[0, 1]); // Good as all elements are of type `int`
+
+    num a = 1;
+    // int b = a;
+
+    // var ints21 = List<int>.of(<num>[0, 1]); // Good as all elements are of type `int`
+    // var ints13 = List<int>.of(<num>[0, 1.5]); // Bad as some elements are of type `double`
+
+    List<String> foo = new List.from(<int>[1, 2, 3]); // okay until runtime.
 
     var foo1 = new List.from(<int>[1, 2, 3]); // List<dynamic>
     print(foo1.runtimeType);

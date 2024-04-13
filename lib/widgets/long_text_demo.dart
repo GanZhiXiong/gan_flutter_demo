@@ -14,360 +14,545 @@ class _LongTextDemoState extends State<LongTextDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Long Text Demo')),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text(
-                '12345678901234567890123456788888888888881234567890abcdeedhello'),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '1',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Text(
-                    '12345678901234567890123456788888888888881234567890abcdeedhello'),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '2',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: Text(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(
+                  '12345678901234567890123456788888888888881234567890abcdeedhello'),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '1',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Text(
                       '12345678901234567890123456788888888888881234567890abcdeedhello'),
-                ),
-              ],
-            ),
-            Divider(),
-            FittedBoxDemo(),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '4',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: FittedBox(
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '2',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Expanded(
                     child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhello',
+                        '12345678901234567890123456788888888888881234567890abcdeedhello'),
+                  ),
+                ],
+              ),
+              Divider(),
+              FittedBoxDemo(),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '4',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Expanded(
+                    child: FittedBox(
+                      child: Text(
+                        '12345678901234567890123456788888888888881234567890abcdeedhello',
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '5',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhello'),
-                ),
-                Expanded(
-                  child: Text(
-                    '12345678901234567890123456788888888888881234567890abcdeedhello',
-                    style: TextStyle(color: Colors.red),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '5',
+                    style: TextStyle(fontSize: 38),
                   ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '6',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
-                ),
-                Text('12345', style: TextStyle(color: Colors.red)),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '7',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
-                ),
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 200),
-                  child: Text(
-                    '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg88',
-                    style: TextStyle(color: Colors.red),
-                    // maxLines: 1,
-                    softWrap: true,
-                  ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '8',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Expanded(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
-                ),
-                Expanded(
-                  child: Text(
-                    '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '9',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Flexible(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
-                ),
-                Flexible(
-                  child: Text(
-                    '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '10',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Flexible(
-                  child: Text('123'),
-                ),
-                Flexible(
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Text(
-                  '11',
-                  style: TextStyle(fontSize: 38),
-                ),
-                Flexible(
-                  flex: 0,
-                  child: Text(
-                    '12312345678901234',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                Expanded(
-                  // fit: FlexFit.s,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 1',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Container(color: Colors.blue),
-                ),
-                Flexible(
-                  flex: 3,
-                  child: Container(color: Colors.green),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 2',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                  ),
-                ),
-                Flexible(
-                  flex: 3,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 3',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Text(
-                    '123',
-                  ),
-                ),
-                Flexible(
-                  flex: 3,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 3-1',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Flexible(
-                  child: Text(
-                    '123',
-                  ),
-                ),
-                Flexible(
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 3-2',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Flexible(
-                  fit: FlexFit.tight,
-                  child: Text(
-                    '123',
-                  ),
-                ),
-                Flexible(
-                  fit: FlexFit.tight,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 4',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              children: [
-                Text(
-                  '123',
-                ),
-                Flexible(
-                  // fit: FlexFit.loose,
-                  child: Text(
-                    'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Flexible 5',
-              style: TextStyle(fontSize: 38),
-            ),
-            Row(
-              // mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                    color: Colors.teal,
+                  Expanded(
                     child: Text(
-                      'Container Text ',
-                    )),
+                        '12345678901234567890123456788888888888881234567890abcdeedhello'),
+                  ),
+                  Expanded(
+                    child: Text(
+                      '12345678901234567890123456788888888888881234567890abcdeedhello',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '6',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Expanded(
+                    child: Text(
+                        '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
+                  ),
+                  Text(
+                      'This is considered an error condition because it indicates that ',
+                      style: TextStyle(color: Colors.red)),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '7',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Expanded(
+                    child: Text(
+                        '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
+                  ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 200),
+                    child: Text(
+                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg88',
+                      style: TextStyle(color: Colors.red),
+                      // maxLines: 1,
+                      softWrap: true,
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '8',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Expanded(
+                    child: Text(
+                        '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
+                  ),
+                  Expanded(
+                    child: Text(
+                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '9',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Flexible(
+                    child: Text(
+                        '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg'),
+                  ),
+                  Flexible(
+                    child: Text(
+                      '12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg12345678901234567890123456788888888888881234567890abcdeedhelloabcdefg',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '10',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Flexible(
+                    child: Text('123'),
+                  ),
+                  Flexible(
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    '11',
+                    style: TextStyle(fontSize: 38),
+                  ),
+                  Flexible(
+                    flex: 0,
+                    child: Text(
+                      '12312345678901234',
+                      softWrap: true,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  Expanded(
+                    // fit: FlexFit.s,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 1',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: Container(color: Colors.blue),
+                  ),
+                  Flexible(
+                    flex: 3,
+                    child: Container(color: Colors.green),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 2',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                    ),
+                  ),
+                  Flexible(
+                    flex: 3,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 3',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: Text(
+                      '123',
+                    ),
+                  ),
+                  Flexible(
+                    flex: 3,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 3-1',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    child: Text(
+                      '123',
+                    ),
+                  ),
+                  Flexible(
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 3-2',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Text(
+                      '123',
+                    ),
+                  ),
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 4',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                children: [
+                  Text(
+                    '123',
+                  ),
+                  Flexible(
+                    // fit: FlexFit.loose,
+                    child: Text(
+                      'You can use the length of the strings to split the area available to each one using calculated flex values in Flexible. The result will not always be optimal with non monospaced fonts, but somehow you have to assign how many space should the texts occupy. You could use Expanded to fill the remaining available space, but it only works if you have a fixed width item and use Expanded on the ',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Flexible 5',
+                style: TextStyle(fontSize: 38),
+              ),
+              Row(
+                // mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                      color: Colors.teal,
+                      child: Text(
+                        'Container Text ',
+                      )),
+                  Flexible(
+                    child: Container(
+                        color: Colors.blue,
+                        child: Text(
+                            ' Text.Flexible Text.Flexible Text.Flexible.')),
+                  ),
+                  Flexible(
+                    child: Container(
+                        color: Colors.yellow, child: Text('Flexible Text.')),
+                  ),
+                  Flexible(
+                    child: Container(
+                        color: Colors.lightGreen, child: Text('Flexible.')),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                children: <Widget>[
+                  Icon(Icons.location_on, color: Colors.grey[700]),
+                  Container(width: 8),
+                  Flexible(
+                    child: Text(
+                        '12345678901234567890123456788888888888881234567890',
+                        overflow: TextOverflow.ellipsis, //this one now works :)
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400)),
+                  ),
+                  Flexible(
+                    child: Text('123456789',
+                        overflow: TextOverflow.ellipsis, //this one now works :)
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400)),
+                  ),
+                ],
+              ),
+              buildRow(),
+              buildRow2(),
+              buildRow1(),
+              Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Flexible(
-                  child: Container(
-                      color: Colors.blue,
-                      child:
-                          Text(' Text.Flexible Text.Flexible Text.Flexible.')),
-                ),
+                    child: Text(
+                        'This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
                 Flexible(
-                  child: Container(
-                      color: Colors.yellow, child: Text('Flexible Text.')),
-                ),
+                    child: Text(
+                        'This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
+              ]),
+              Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Flexible(
-                  child: Container(
-                      color: Colors.lightGreen, child: Text('Flexible.')),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: <Widget>[
-                Icon(Icons.location_on, color: Colors.grey[700]),
-                Container(width: 8),
+                    child: Text('This is considered an error condition because',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
                 Flexible(
-                  child: Text(
-                      '12345678901234567890123456788888888888881234567890',
-                      overflow: TextOverflow.ellipsis, //this one now works :)
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400)),
-                ),
+                    child: Text('This is',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
+              ]),
+              Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Flexible(
-                  child: Text('123456789',
-                      overflow: TextOverflow.ellipsis, //this one now works :)
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400)),
-                ),
-              ],
-            ),
-            buildRow(),
-            buildRow2(),
-            buildRow1(),
-          ],
+                    flex:
+                        'This is considered an error condition because'.length,
+                    child: Text(
+                        'This is considered an error condition because 123432222233333888888',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
+                Flexible(
+                    flex:
+                        'This is This is considered an error condition because it indicates that there is content that cannot be seen.'
+                            .length,
+                    child: Text(
+                        'This is This is considered an error condition because it indicates that there is content that cannot be see',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left)),
+              ]),
+              Row(children: [
+                Text(
+                    'This is considered an error condition because 123432222233333888888',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.left),
+                Text(
+                    'This is This is considered an error condition because it indicates that there is content that cannot be see',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.left),
+              ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("1Prefix"),
+                  Expanded(
+                    child: Text(
+                        'This is This is considered an error condition because it indicates that there is content that cannot be see', style: TextStyle(color: Colors.red),),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("2Prefix"),
+                  Flexible(
+                    child: Text(
+                        'This is This is considered an error condition because it indicates that there is content that cannot be see', style: TextStyle(color: Colors.red),),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Prefix"),
+                  Expanded(
+                    child: Container(
+                      color: Colors.deepOrange,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Very ",
+                              maxLines: 1,
+                            ),
+                          ),
+                          Icon(
+                            Icons.tag_sharp,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Prefix"),
+                  Expanded(
+                    child: Container(
+                      color: Colors.deepOrange,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Very This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Icon(
+                            Icons.tag_sharp,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Prefix"),
+                  Expanded(
+                    child: Container(
+                      color: Colors.deepOrange,
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              "Very ",
+                              maxLines: 1,
+                            ),
+                          ),
+                          Icon(
+                            Icons.tag_sharp,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Prefix"),
+                  Expanded(
+                    child: Container(
+                      color: Colors.deepOrange,
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              "Very This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Icon(
+                            Icons.tag_sharp,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TrailingIcon"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -413,18 +598,14 @@ class _LongTextDemoState extends State<LongTextDemo> {
         ),
         Text('1234567890123456789012345678888888888888'),
         Expanded(
-          child: Column(
-            children: [
-              Text(
-                "Now that you've finished a plan, it's essential to measure your growth. We've included assessments and activities to do just that.",
-                style: TextStyle(
-                  overflow: TextOverflow.visible,
-                  color: Color(0x80484848),
-                  fontWeight: FontWeight.w400,
-                  // fontSize: 30,
-                ),
-              ),
-            ],
+          child: Text(
+            "Now that you've finished a plan, it's essential to measure your growth. We've included assessments and activities to do just that.",
+            style: TextStyle(
+              overflow: TextOverflow.visible,
+              color: Color(0x80484848),
+              fontWeight: FontWeight.w400,
+              // fontSize: 30,
+            ),
           ),
         ),
       ],
@@ -482,8 +663,7 @@ class FittedBoxDemo extends StatelessWidget {
             Expanded(
               child: FittedBox(
                 child: Text(
-                  '12345678901234567890123456788888888888881234567890abcdeedhello'
-                ),
+                    '12345678901234567890123456788888888888881234567890abcdeedhello'),
               ),
             ),
           ],
@@ -612,8 +792,7 @@ class SingleLineFittedBox1 extends StatelessWidget {
             constraints: constraints.copyWith(
                 //让 maxWidth 使用屏幕宽度
                 minWidth: constraints.maxWidth,
-                maxWidth: double.infinity
-            ),
+                maxWidth: double.infinity),
             child: child,
           ),
         );
