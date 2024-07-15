@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// Flutter code sample for [CupertinoTimerPicker].
 
@@ -24,7 +26,7 @@ class PickerDemo extends StatefulWidget {
 }
 
 class _PickerDemoState extends State<PickerDemo> {
-  Duration duration = const Duration(hours: 1, minutes: 23, seconds: 18);
+  Duration duration = const Duration(hours: 48, minutes: 23, seconds: 18);
 
   // This shows a CupertinoModalPopup with a reasonable fixed height which hosts
   // a CupertinoTimerPicker.
@@ -65,6 +67,16 @@ class _PickerDemoState extends State<PickerDemo> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child: Text('setState')),
+              TextButton(
+                  onPressed: () {
+                    showCoursePicker(context);
+                  },
+                  child: const Text('CupertinoPicker.builder')),
               _TimerPickerItem(
                 children: <Widget>[
                   const Text('Timer'),
@@ -97,6 +109,84 @@ class _PickerDemoState extends State<PickerDemo> {
           ),
         ),
       ),
+    );
+  }
+
+  showCoursePicker(context) {
+    FixedExtentScrollController? leftScrollCtrl = FixedExtentScrollController(initialItem: 0);
+    return showModalBottomSheet(
+      enableDrag: false,
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setStateNew) {
+            return Container(
+              // height: 250,
+              child: Column(
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        setStateNew(() {});
+                      },
+                      child: Text('setState')),
+                  Row(
+                    // mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          // height: 280,
+                          child: CupertinoPicker.builder(
+                              // scrollController: leftScrollCtrl,
+                              // childCount: 60,
+                              itemExtent: 40,
+                              useMagnifier: true,
+                              magnification: 1.3,
+                              onSelectedItemChanged: (value) {},
+                              itemBuilder: (ctx, index) {
+                                print(index);
+                                if (index < 0 || index > 8) {
+                                  return null;
+                                }
+                                return Center(
+                                  child: Text('$index'),
+                                );
+                              }),
+                        ),
+                      ),
+                      Expanded(
+                        child: CupertinoPicker.builder(
+                            childCount: 60,
+                            itemExtent: 40,
+                            useMagnifier: true,
+                            magnification: 1.3,
+                            onSelectedItemChanged: (value) {},
+                            itemBuilder: (ctx, index) {
+                              return Center(
+                                child: Text('$index'),
+                              );
+                            }),
+                      ),
+                      Expanded(
+                        child: CupertinoPicker.builder(
+                            childCount: 60,
+                            itemExtent: 40,
+                            useMagnifier: true,
+                            magnification: 1.3,
+                            onSelectedItemChanged: (value) {},
+                            itemBuilder: (ctx, index) {
+                              return Center(
+                                child: Text('$index'),
+                              );
+                            }),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

@@ -1,3 +1,5 @@
+// import 'package:win32_registry/win32_registry.dart';
+// import 'package:win32/win32.dart';
 import 'package:flutter/material.dart';
 import 'package:gan_flutter_demo/water_tank_page.dart';
 import 'package:gan_flutter_demo/widgets/bottom_sheet_demo.dart';
@@ -5,8 +7,12 @@ import 'package:gan_flutter_demo/widgets/list_view_demo.dart';
 import 'package:gan_flutter_demo/widgets/long_text_demo.dart';
 import 'package:gan_flutter_demo/widgets/parameter_passing_demo.dart';
 import 'package:gan_flutter_demo/widgets/picker_demo.dart';
+import 'package:gan_flutter_demo/widgets/scale_update_demo.dart';
 import 'package:gan_flutter_demo/widgets/scrollable_sheet_page.dart';
 import 'package:gan_flutter_demo/widgets/slider_demo.dart';
+import 'package:gan_flutter_demo/widgets/svg_demo.dart';
+import 'package:gan_flutter_demo/widgets/time_demo.dart';
+import 'package:gan_flutter_demo/widgets/touch_demo.dart';
 
 import 'type/basic_types_demo.dart';
 
@@ -20,6 +26,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print(
+        'MediaQuery.of(context).alwaysUse24HourFormat: ${MediaQuery.of(context).alwaysUse24HourFormat}');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -43,7 +51,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const WaterTankPage(),
-      home: const BottomSheetDemo(),
+      // home: const BottomSheetDemo(),
       // home: ScrollableSheetPage(),
       // home: LongTextDemo(),
       // home: SliderDemo(),
@@ -51,6 +59,11 @@ class MyApp extends StatelessWidget {
       // home: BasicTypesDemo(),
       // home: const PickerDemo(),
       // home: WidgetC(),
+      // home: TouchDemo(),
+      // home: ScaleUpdateDemo(),
+      // home: TimeDemo(),
+      // home: const PickerDemo(),
+      home: const SvgDemo(),
     );
   }
 }
