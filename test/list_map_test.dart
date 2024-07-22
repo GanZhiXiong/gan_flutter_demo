@@ -32,6 +32,16 @@ class Person {
 }
 
 void main() {
+  test('...map', () {
+    Map? a;
+    var b = {...?a, 'c': 1};
+    print(b);
+
+    Map<String, dynamic>? value = {};
+    value.addAll({'a': 1});
+    value.addAll({'b': 2});
+    print(value);
+  });
   test('addAll', () {
     Map w = {'4': 3};
     print(jsonEncode(w));
@@ -156,7 +166,7 @@ void main() {
   test('map copy', () {
     var myMap = {
       'a': 1,
-      'b': {'bb': 2},
+      'b': {'b': 2},
       'c': 3
     }; // 创建一个 Map 对象
     // var yourMap = myMap.map((key, value) => MapEntry(key, value));
