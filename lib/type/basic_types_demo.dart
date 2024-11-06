@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gan_flutter_demo/type/t_test.dart';
 
 class BasicTypesDemo extends StatefulWidget {
   const BasicTypesDemo({super.key});
@@ -15,17 +16,26 @@ class _BasicTypesDemoState extends State<BasicTypesDemo> {
           title: const Text('Basic Types Demo'),
         ),
         body: Center(
-          child: MyWidget(
-            //Listening to the click and input events
-            valueChanged: (val) {
-              print('I am a valueChanged');
-            },
-            valueSetter: (value) {
-              print('I am a valueSetter');
-            },
-            valueGetter: () {
-              print('I am a valueGetter');
-            },
+          child: Column(
+            children: [
+              TTest<List<String>>(
+                builder: (List<String>? data) {
+                  return Text(data?.join(',') ?? '');
+                },
+              ),
+              MyWidget(
+                //Listening to the click and input events
+                valueChanged: (val) {
+                  print('I am a valueChanged');
+                },
+                valueSetter: (value) {
+                  print('I am a valueSetter');
+                },
+                valueGetter: () {
+                  print('I am a valueGetter');
+                },
+              ),
+            ],
           ),
         ));
   }

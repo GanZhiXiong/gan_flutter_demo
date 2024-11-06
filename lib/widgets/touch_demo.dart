@@ -84,7 +84,7 @@ class _TapOrHoldButtonState extends State<TapOrHoldButton> {
           child: Icon(
             widget.icon,
             color:
-            Theme.of(context).textTheme.headline1?.color ?? Colors.white70,
+            Theme.of(context).textTheme.headlineMedium?.color ?? Colors.white70,
             size: 36,
           ),
         ),

@@ -3,7 +3,6 @@ import 'package:gan_flutter_demo/type/number.dart';
 import 'package:intl/intl.dart';
 
 void main() {
-
   test('num parse', () {
     dynamic a = '123';
     print(num.parse(a));

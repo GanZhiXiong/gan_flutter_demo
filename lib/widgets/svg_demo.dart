@@ -22,7 +22,74 @@ class _SvgDemoState extends State<SvgDemo> {
           children: [
             const Column(
               children: [
-                Text('MonoChrome IconFont Color Green'),
+                Text('1️⃣ MonoChrome IconFont No Color'),
+                Icon(
+                  MonoChromeIconFont.iconA5008lixian,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA5008zaixian,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA5008guanbi,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA7617Mianxing,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA7617Mianxing1,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA7617Mianxing2,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconChapai,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconChekuguanmen,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconKaicheku,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconKaiguankongzhi,
+                  size: size,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconShuifa,
+                  size: size,
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            const Column(
+              children: [
+                Text('2️⃣ MonoChrome IconFont Green Color'),
+                Icon(
+                  MonoChromeIconFont.iconA5008lixian,
+                  size: size,
+                  color: color,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA5008zaixian,
+                  size: size,
+                  color: color,
+                ),
+                Icon(
+                  MonoChromeIconFont.iconA5008guanbi,
+                  size: size,
+                  color: color,
+                ),
                 Icon(
                   MonoChromeIconFont.iconA7617Mianxing,
                   size: size,
@@ -70,7 +137,74 @@ class _SvgDemoState extends State<SvgDemo> {
             ),
             const Column(
               children: [
-                Text('MultiColour IconFont Color Green'),
+                Text('3️⃣ MultiColour IconFont No Color'),
+                Icon(
+                  MultiColourIconFont.iconA5008lixian,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconA5008zaixian,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconA5008guanbi,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconA7617Mianxing,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconA7617Mianxing1,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconA7617Mianxing2,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconChapai,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconChekuguanmen,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconKaicheku,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconKaiguankongzhi,
+                  size: size,
+                ),
+                Icon(
+                  MultiColourIconFont.iconShuifa,
+                  size: size,
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            const Column(
+              children: [
+                Text('4️⃣ MultiColour IconFont Green Color'),
+                Icon(
+                  MultiColourIconFont.iconA5008lixian,
+                  size: size,
+                  color: color
+                ),
+                Icon(
+                  MultiColourIconFont.iconA5008zaixian,
+                  size: size,
+                  color: color
+                ),
+                Icon(
+                  MultiColourIconFont.iconA5008guanbi,
+                  size: size,
+                  color: color
+                ),
                 Icon(
                   MultiColourIconFont.iconA7617Mianxing,
                   size: size,

@@ -16,6 +16,12 @@ class MonoChromeIconFont {
   static const IconData iconChapai = IconData(0xe6b1, fontFamily: _fontFamily);
   static const IconData iconChekuguanmen =
       IconData(0xe6ab, fontFamily: _fontFamily);
+  static const IconData iconA5008lixian =
+      IconData(0xe718, fontFamily: _fontFamily);
+  static const IconData iconA5008zaixian =
+      IconData(0xe71a, fontFamily: _fontFamily);
+  static const IconData iconA5008guanbi =
+      IconData(0xe719, fontFamily: _fontFamily);
 }
 
 class MultiColourIconFont {
@@ -34,4 +40,10 @@ class MultiColourIconFont {
   static const IconData iconChapai = IconData(0xe6b1, fontFamily: _fontFamily);
   static const IconData iconChekuguanmen =
       IconData(0xe6ab, fontFamily: _fontFamily);
+  static const IconData iconA5008lixian =
+      IconData(0xe718, fontFamily: _fontFamily);
+  static const IconData iconA5008zaixian =
+      IconData(0xe71a, fontFamily: _fontFamily);
+  static const IconData iconA5008guanbi =
+      IconData(0xe719, fontFamily: _fontFamily);
 }

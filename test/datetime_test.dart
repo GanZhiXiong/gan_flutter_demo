@@ -4,6 +4,12 @@ import 'package:intl/intl.dart';
 import 'package:intl/date_time_patterns.dart';
 
 void main() {
+  test('utc time test', () {
+    var formattedString = "2024-08-29T04:39:33.605Z";
+    print(DateTime.parse(formattedString));
+    print(DateTime.parse(formattedString).toLocal());
+  });
+
   test("time zone 1", () {
     print(DateTime.now().isUtc);
     print(DateTime.now().toUtc().isUtc);

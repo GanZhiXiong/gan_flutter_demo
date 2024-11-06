@@ -36,6 +36,14 @@ class PulseMode {
 
 void main() {
   test('json', () {
+
+    Map<String, dynamic> json = {
+      'duration': 1,
+      'enable': true
+    };
+
+    print(json['a']);
+
     var p = PulseMode(enable: true, duration: 1);
     print(p);
     print(p.toString());

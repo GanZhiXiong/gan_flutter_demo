@@ -32,6 +32,25 @@ class Person {
 }
 
 void main() {
+  test('empty or null', () {
+    var a = {};
+    List<int>? b = [];
+    var c = [];
+
+    // print(b.elementAt(0));
+    print(b.elementAtOrNull(-1));
+    print(b?[0]);
+    print(c[0]);
+
+    print(a.isEmpty);
+    print(b?.isEmpty == true);
+    print(c.isEmpty);
+
+    print(a.isNotEmpty);
+    print(b?.isNotEmpty == true);
+    print(c.isNotEmpty);
+  });
+
   test('...map', () {
     Map? a;
     var b = {...?a, 'c': 1};

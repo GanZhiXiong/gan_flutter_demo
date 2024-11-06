@@ -2,19 +2,23 @@
 // import 'package:win32/win32.dart';
 import 'package:flutter/material.dart';
 import 'package:gan_flutter_demo/water_tank_page.dart';
+import 'package:gan_flutter_demo/widgets/RadioWidgetDemo.dart';
 import 'package:gan_flutter_demo/widgets/bottom_sheet_demo.dart';
+import 'package:gan_flutter_demo/widgets/button_demo.dart';
 import 'package:gan_flutter_demo/widgets/list_view_demo.dart';
 import 'package:gan_flutter_demo/widgets/long_text_demo.dart';
 import 'package:gan_flutter_demo/widgets/parameter_passing_demo.dart';
 import 'package:gan_flutter_demo/widgets/picker_demo.dart';
 import 'package:gan_flutter_demo/widgets/scale_update_demo.dart';
 import 'package:gan_flutter_demo/widgets/scrollable_sheet_page.dart';
+import 'package:gan_flutter_demo/widgets/shape_demo.dart';
 import 'package:gan_flutter_demo/widgets/slider_demo.dart';
 import 'package:gan_flutter_demo/widgets/svg_demo.dart';
 import 'package:gan_flutter_demo/widgets/time_demo.dart';
 import 'package:gan_flutter_demo/widgets/touch_demo.dart';
 
 import 'type/basic_types_demo.dart';
+import 'widgets/dialog_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,42 +33,47 @@ class MyApp extends StatelessWidget {
     print(
         'MediaQuery.of(context).alwaysUse24HourFormat: ${MediaQuery.of(context).alwaysUse24HourFormat}');
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        // useMaterial3: true,
-      ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      // home: const WaterTankPage(),
-      // home: const BottomSheetDemo(),
-      // home: ScrollableSheetPage(),
-      // home: LongTextDemo(),
-      // home: SliderDemo(),
-      // home: ListViewDemo(),
-      // home: BasicTypesDemo(),
-      // home: const PickerDemo(),
-      // home: WidgetC(),
-      // home: TouchDemo(),
-      // home: ScaleUpdateDemo(),
-      // home: TimeDemo(),
-      // home: const PickerDemo(),
-      home: const SvgDemo(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // TRY THIS: Try running your application with "flutter run". You'll see
+          // the application has a blue toolbar. Then, without quitting the app,
+          // try changing the seedColor in the colorScheme below to Colors.green
+          // and then invoke "hot reload" (save your changes or press the "hot
+          // reload" button in a Flutter-supported IDE, or press "r" if you used
+          // the command line to start the app).
+          //
+          // Notice that the counter didn't reset back to zero; the application
+          // state is not lost during the reload. To reset the state, use hot
+          // restart instead.
+          //
+          // This works for code too, not just values: Most code changes can be
+          // tested with just a hot reload.
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          // useMaterial3: true,
+        ),
+        // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        // home: const WaterTankPage(),
+        // home: const BottomSheetDemo(),
+        // home: ScrollableSheetPage(),
+        // home: LongTextDemo(),
+        // home: SliderDemo(),
+        // home: ButtonDemo(),
+        // home: ShapeDemo()
+        // home: ListViewDemo(),
+        // home: BasicTypesDemo(),
+        // home: const PickerDemo(),
+        // home: WidgetC(),
+        // home: TouchDemo(),
+        // home: ScaleUpdateDemo(),
+        // home: TimeDemo(),
+        // home: const PickerDemo(),
+        // home: const SvgDemo(),
+        // home: ButtonDemo()
+        // home: RadioWidgetDemo(),
+        home: DialogDemo(),
+        );
   }
 }
 
